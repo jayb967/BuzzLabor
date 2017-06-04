@@ -9,28 +9,28 @@
 import UIKit
 import MapKit
 
-class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UberController {
+class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, LaborController {
     
     @IBOutlet weak var myMap: MKMapView!
     
-    @IBOutlet weak var callUberBtn: UIButton!
     
     private var locationManager = CLLocationManager();
     private var userLocation: CLLocationCoordinate2D?;
-    private var driverLocation: CLLocationCoordinate2D?;
+    private var laborerLocation: CLLocationCoordinate2D?;
     
     private var timer = Timer();
     
-    private var canCallUber = true;
-    private var riderCanceledRequest = false;
+    private var canCallLabor = true;
+    private var LaborerCancelledRequest = false;
     
     private var appStartedForTheFirstTime = true;
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.disableKeybordWhenTapped = true
         initializeLocationManager();
-        UberHandler.Instance.observeMessagesForRider();
-        UberHandler.Instance.delegate = self;
+        LaborHandler.Instance.observeMessagesForUser();
+        LaborHandler.Instance.delegate = self;
     }
     
     private func initializeLocationManager() {
@@ -38,6 +38,24 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.requestWhenInUseAuthorization();
         locationManager.startUpdatingLocation();
+    }
+    
+    @IBAction func callLaborerButton(_ sender: Any) {
+        
+        self.dismiss(animated: true) { 
+            if self.userLocation != nil {
+                if self.canCallLabor {
+                    LaborHandler.Instance.requestLabor(latitude: Double(self.userLocation!.latitude), longitude: Double(self.userLocation!.longitude))
+                    
+                    self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self, selector: #selector(MainUserViewController.updateUsersLocation), userInfo: nil, repeats: true);
+                    
+                } else {
+                    self.LaborerCancelledRequest = true;
+                    LaborHandler.Instance.cancelUber();
+                    self.timer.invalidate();
+                }
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -53,12 +71,12 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             
             myMap.removeAnnotations(myMap.annotations);
             
-            if driverLocation != nil {
-                if !canCallUber {
-                    let driverAnnotation = MKPointAnnotation();
-                    driverAnnotation.coordinate = driverLocation!;
-                    driverAnnotation.title = "Driver Location";
-                    myMap.addAnnotation(driverAnnotation);
+            if laborerLocation != nil {
+                if !canCallLabor {
+                    let laborerAnnotation = MKPointAnnotation();
+                    laborerAnnotation.coordinate = laborerLocation!;
+                    laborerAnnotation.title = "Driver Location";
+                    myMap.addAnnotation(laborerAnnotation);
                 }
             }
             
@@ -71,58 +89,38 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         
     }
     
-    func updateRidersLocation() {
-        UberHandler.Instance.updateRiderLocation(lat: userLocation!.latitude, long: userLocation!.longitude);
+    func updateUsersLocation() {
+        LaborHandler.Instance.updateRiderLocation(lat: userLocation!.latitude, long: userLocation!.longitude);
     }
     
-    func canCallUber(delegateCalled: Bool) {
-        if delegateCalled {
-            callUberBtn.setTitle("Cancel Uber", for: UIControlState.normal);
-            canCallUber = false;
-        } else {
-            callUberBtn.setTitle("Call Uber", for: UIControlState.normal);
-            canCallUber = true;
-        }
+    func canCallLabor(delegateCalled: Bool) {
+        canCallLabor = true
     }
     
-    func driverAcceptedRequest(requestAccepted: Bool, driverName: String) {
+    func laborerAcceptedRequest(requestAccepted: Bool, driverName: String) {
         
-        if !riderCanceledRequest {
+        if !LaborerCancelledRequest {
             if requestAccepted {
                 alertTheUser(title: "Uber Accepted", message: "\(driverName) Accepted Your Uber Request")
             } else {
-                UberHandler.Instance.cancelUber();
+                LaborHandler.Instance.cancelUber();
                 timer.invalidate();
                 alertTheUser(title: "Uber Canceled", message: "\(driverName) Canceled Uber Request")
             }
         }
-        riderCanceledRequest = false;
+        LaborerCancelledRequest = false;
     }
     
-    func updateDriversLocation(lat: Double, long: Double) {
-        driverLocation = CLLocationCoordinate2D(latitude: lat, longitude: long);
+    func updateLaborerLocation(lat: Double, long: Double) {
+        laborerLocation = CLLocationCoordinate2D(latitude: lat, longitude: long);
     }
-    
-    @IBAction func callUber(_ sender: AnyObject) {
-        if userLocation != nil {
-            if canCallUber {
-                UberHandler.Instance.requestUber(latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
-                
-                timer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self, selector: #selector(MainUserViewController.updateRidersLocation), userInfo: nil, repeats: true);
-                
-            } else {
-                riderCanceledRequest = true;
-                UberHandler.Instance.cancelUber();
-                timer.invalidate();
-            }
-        }
-    }
+  
     
     @IBAction func logout(_ sender: AnyObject) {
         if AuthProvider.Instance.logOut() {
             
-            if !canCallUber {
-                UberHandler.Instance.cancelUber();
+            if !canCallLabor {
+                LaborHandler.Instance.cancelUber();
                 timer.invalidate();
             }
             

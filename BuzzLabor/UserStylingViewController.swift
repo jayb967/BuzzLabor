@@ -30,23 +30,23 @@ class UserStylingViewController: NSObject {
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 414, y: resizedFrame.height / 736)
         
-        /// 03
-        // Warning: Image layers are not supported.
-        /// Rectangle 2
-//        let rectangle2 = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 253, height: 34), cornerRadius: 8)
-//        context.saveGState()
-//        context.translateBy(x: 81, y: 469)
-//        UIColor(white: 0.847, alpha: 0.53).setFill()
-//        rectangle2.fill()
-//        context.saveGState()
-//        rectangle2.lineWidth = 2
-//        context.beginPath()
-//        context.addPath(rectangle2.cgPath)
-//        context.clip(using: .evenOdd)
-//        UIColor(white: 0.592, alpha: 1).setStroke()
-//        rectangle2.stroke()
-//        context.restoreGState()
-//        context.restoreGState()
+//        / 03
+//         Warning: Image layers are not supported.
+//        / Rectangle 2
+        let rectangle2 = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 253, height: 34), cornerRadius: 8)
+        context.saveGState()
+        context.translateBy(x: 81, y: 469)
+        UIColor(white: 0.847, alpha: 0.53).setFill()
+        rectangle2.fill()
+        context.saveGState()
+        rectangle2.lineWidth = 2
+        context.beginPath()
+        context.addPath(rectangle2.cgPath)
+        context.clip(using: .evenOdd)
+        UIColor(white: 0.592, alpha: 1).setStroke()
+        rectangle2.stroke()
+        context.restoreGState()
+        context.restoreGState()
         /// Username
         let username = NSMutableAttributedString(string: "Username")
         username.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 18)!, range: NSRange(location: 0, length: username.length))
@@ -78,7 +78,7 @@ class UserStylingViewController: NSObject {
         context.restoreGState()
         /// Buzz Labor
         let buzzLabor = NSMutableAttributedString(string: "Buzz Labor")
-        buzzLabor.addAttribute(NSFontAttributeName, value: UIFont(name: "Arial-Black", size: 36)!, range: NSRange(location: 0, length: buzzLabor.length))
+        buzzLabor.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 36)!, range: NSRange(location: 0, length: buzzLabor.length))
         buzzLabor.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.89, saturation: 0, brightness: 1, alpha: 1), range: NSRange(location: 0, length: buzzLabor.length))
         context.saveGState()
         buzzLabor.draw(at: CGPoint(x: 99, y: 212))

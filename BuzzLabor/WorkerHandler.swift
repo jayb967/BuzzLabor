@@ -9,34 +9,34 @@
 import Foundation
 import FirebaseDatabase
 
-protocol UberController: class {
-    func canCallUber(delegateCalled: Bool);
-    func driverAcceptedRequest(requestAccepted: Bool, driverName: String);
-    func updateDriversLocation(lat: Double, long: Double);
+protocol LaborController: class {
+    func canCallLabor(delegateCalled: Bool);
+    func laborerAcceptedRequest(requestAccepted: Bool, driverName: String);
+    func updateLaborerLocation(lat: Double, long: Double);
 }
 
-class UberHandler {
-    private static let _instance = UberHandler();
+class LaborHandler {
+    private static let _instance = LaborHandler();
     
-    weak var delegate: UberController?;
+    weak var delegate: LaborController?;
     
     var rider = "";
     var driver = "";
     var rider_id = "";
     
-    static var Instance: UberHandler {
+    static var Instance: LaborHandler {
         return _instance;
     }
     
-    func observeMessagesForRider() {
-        // RIDER REQUESTED UBER
+    func observeMessagesForUser() {
+        // User requested Labor
         DBProvider.Instance.requestRef.observe(DataEventType.childAdded) { (snapshot: DataSnapshot) in
             
             if let data = snapshot.value as? NSDictionary {
                 if let name = data[Constants.NAME] as? String {
                     if name == self.rider {
                         self.rider_id = snapshot.key;
-                        self.delegate?.canCallUber(delegateCalled: true);
+                        self.delegate?.canCallLabor(delegateCalled: true);
                     }
                 }
             }
@@ -49,7 +49,7 @@ class UberHandler {
             if let data = snapshot.value as? NSDictionary {
                 if let name = data[Constants.NAME] as? String {
                     if name == self.rider {
-                        self.delegate?.canCallUber(delegateCalled: false);
+                        self.delegate?.canCallLabor(delegateCalled: false);
                     }
                 }
             }
@@ -63,7 +63,7 @@ class UberHandler {
                 if let name = data[Constants.NAME] as? String {
                     if self.driver == "" {
                         self.driver = name;
-                        self.delegate?.driverAcceptedRequest(requestAccepted: true, driverName: self.driver);
+                        self.delegate?.laborerAcceptedRequest(requestAccepted: true, driverName: self.driver);
                     }
                 }
             }
@@ -77,7 +77,7 @@ class UberHandler {
                 if let name = data[Constants.NAME] as? String {
                     if name == self.driver {
                         self.driver = "";
-                        self.delegate?.driverAcceptedRequest(requestAccepted: false, driverName: name);
+                        self.delegate?.laborerAcceptedRequest(requestAccepted: false, driverName: name);
                     }
                 }
             }
@@ -92,7 +92,7 @@ class UberHandler {
                     if name == self.driver {
                         if let lat = data[Constants.LATITUDE] as? Double {
                             if let long = data[Constants.LONGITUDE] as? Double {
-                                self.delegate?.updateDriversLocation(lat: lat, long: long);
+                                self.delegate?.updateLaborerLocation(lat: lat, long: long);
                             }
                         }
                     }
@@ -103,7 +103,7 @@ class UberHandler {
         
     }
     
-    func requestUber(latitude: Double, longitude: Double) {
+    func requestLabor(latitude: Double, longitude: Double) {
         let data: Dictionary<String, Any> = [Constants.NAME: rider, Constants.LATITUDE: latitude, Constants.LONGITUDE: longitude];
         DBProvider.Instance.requestRef.childByAutoId().setValue(data);
     } // request uber

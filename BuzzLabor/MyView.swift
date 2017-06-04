@@ -2,7 +2,7 @@
 //  MyView.swift
 //  BuzzLabor
 //
-//  Created by Rio Balderas on 6/3/17.
+//  Created by Jay Balderas on 6/3/17.
 //  Copyright © 2017 Jay Balderas. All rights reserved.
 //
 
