@@ -315,6 +315,7 @@
                                 </state>
                                 <connections>
                                     <action selector="callLaborerButton:" destination="QCQ-j1-HKi" eventType="touchUpInside" id="5X4-AH-aSq"/>
+                                    <action selector="cancelButtonPressed:" destination="QCQ-j1-HKi" eventType="touchUpInside" id="vUL-Zl-N4K"/>
                                 </connections>
                             </button>
                         </subviews>

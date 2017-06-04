@@ -27,10 +27,16 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.myMap.showsBuildings = true
         view.disableKeybordWhenTapped = true
         initializeLocationManager();
         LaborHandler.Instance.observeMessagesForUser();
         LaborHandler.Instance.delegate = self;
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super .viewDidAppear(animated)
+        
+        self.myMap.showsUserLocation = true
     }
     
     private func initializeLocationManager() {
@@ -58,6 +64,9 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         }
     }
     
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         // if we have the coordinates from the manager
@@ -75,18 +84,30 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                 if !canCallLabor {
                     let laborerAnnotation = MKPointAnnotation();
                     laborerAnnotation.coordinate = laborerLocation!;
-                    laborerAnnotation.title = "Driver Location";
+                    laborerAnnotation.title = "Laborer Location";
                     myMap.addAnnotation(laborerAnnotation);
                 }
             }
             
-            let annotation = MKPointAnnotation();
-            annotation.coordinate = userLocation!;
-            annotation.title = "Drivers Location";
-            myMap.addAnnotation(annotation);
+//            let annotation = MKPointAnnotation();
+//            annotation.coordinate = userLocation!;
+//            annotation.title = "Laborer Location";
+//            myMap.addAnnotation(annotation);
             
         }
         
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+            
+        else {
+            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView") ?? MKAnnotationView()
+            annotationView.image = UIImage(named: "Laborer")
+            return annotationView
+        }
     }
     
     func updateUsersLocation() {
@@ -101,11 +122,11 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         
         if !LaborerCancelledRequest {
             if requestAccepted {
-                alertTheUser(title: "Uber Accepted", message: "\(driverName) Accepted Your Uber Request")
+                alertTheUser(title: "Labor Accepted", message: "\(driverName) Accepted Your Request")
             } else {
                 LaborHandler.Instance.cancelUber();
                 timer.invalidate();
-                alertTheUser(title: "Uber Canceled", message: "\(driverName) Canceled Uber Request")
+                alertTheUser(title: "Labor Canceled", message: "\(driverName) Canceled Your Request")
             }
         }
         LaborerCancelledRequest = false;
