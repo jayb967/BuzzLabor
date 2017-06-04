@@ -1,5 +1,5 @@
 //
-//  MainUserViewController.swift
+//  LaborEnRouteViewController.swift
 //  BuzzLabor
 //
 //  Created by Jay Balderas on 6/3/17.
@@ -9,12 +9,9 @@
 import UIKit
 import MapKit
 
-class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, LaborController {
+class LaborEnRouteViewController: UIViewController {
     
-    @IBOutlet weak var myMap: MKMapView!
-    
-    @IBOutlet weak var descriptionTextField: UITextField?
-    
+    var descriptionTextField: String?
     private var locationManager = CLLocationManager();
     private var userLocation: CLLocationCoordinate2D?;
     private var laborerLocation: CLLocationCoordinate2D?;
@@ -25,31 +22,29 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     private var LaborerCancelledRequest = false;
     
     private var appStartedForTheFirstTime = true;
+
+
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.myMap.showsBuildings = true
+        self.mapView.showsBuildings = true
         view.disableKeybordWhenTapped = true
         initializeLocationManager();
         LaborHandler.Instance.observeMessagesForUser();
-        LaborHandler.Instance.delegate = self;
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super .viewDidAppear(animated)
+        LaborHandler.Instance.delegate = self as! LaborController;
         
-//        self.myMap.showsUserLocation = true
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if (segue.identifier == "LaborConfirmed") {
-//            var svc = segue.destination as! LaborEnRouteViewController;
-//            svc.descriptionTextField = descriptionTextField.text
-//        }
-//
-//    }
-  
+
+    @IBAction func contactButtonPressed(_ sender: Any) {
+        let secondViewController:ProfileViewController = ProfileViewController()
+        
+        self.present(secondViewController, animated: true, completion: nil)
+        
+    }
     
     private func initializeLocationManager() {
-        locationManager.delegate = self;
+        locationManager.delegate = self as! CLLocationManagerDelegate;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.requestWhenInUseAuthorization();
         locationManager.startUpdatingLocation();
@@ -57,7 +52,7 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     @IBAction func callLaborerButton(_ sender: Any) {
         
-        self.dismiss(animated: true) { 
+        self.dismiss(animated: true) {
             if self.userLocation != nil {
                 if self.canCallLabor {
                     LaborHandler.Instance.requestLabor(latitude: Double(self.userLocation!.latitude), longitude: Double(self.userLocation!.longitude))
@@ -85,23 +80,18 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             
             let region = MKCoordinateRegion(center: userLocation!, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01));
             
-            myMap.setRegion(region, animated: true);
+            mapView.setRegion(region, animated: true);
             
-            myMap.removeAnnotations(myMap.annotations);
+            mapView.removeAnnotations(mapView.annotations);
             
             if laborerLocation != nil {
                 if !canCallLabor {
                     let laborerAnnotation = MKPointAnnotation();
                     laborerAnnotation.coordinate = laborerLocation!;
                     laborerAnnotation.title = "Laborer Location";
-                    myMap.addAnnotation(laborerAnnotation);
+                    mapView.addAnnotation(laborerAnnotation);
                 }
             }
-            
-//            let annotation = MKPointAnnotation();
-//            annotation.coordinate = userLocation!;
-//            annotation.title = "Laborer Location";
-//            myMap.addAnnotation(annotation);
             
         }
         
@@ -144,7 +134,7 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     func updateLaborerLocation(lat: Double, long: Double) {
         laborerLocation = CLLocationCoordinate2D(latitude: lat, longitude: long);
     }
-  
+    
     
     @IBAction func logout(_ sender: AnyObject) {
         if AuthProvider.Instance.logOut() {
@@ -168,5 +158,7 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         alert.addAction(ok);
         present(alert, animated: true, completion: nil);
     }
+
     
-} // class
+
+}

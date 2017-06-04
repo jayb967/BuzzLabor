@@ -26,6 +26,8 @@
 		28B4C4391EE3965D00A3F853 /* SIgnInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C4381EE3965D00A3F853 /* SIgnInView.swift */; };
 		28B4C43B1EE3AA0800A3F853 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C43A1EE3AA0800A3F853 /* UIExtensions.swift */; };
 		28B4C43D1EE3AA4100A3F853 /* TapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C43C1EE3AA4100A3F853 /* TapGestureRecognizer.swift */; };
+		28B4C43F1EE3CFDA00A3F853 /* LaborEnRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C43E1EE3CFDA00A3F853 /* LaborEnRouteViewController.swift */; };
+		28B4C4411EE3D63F00A3F853 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C4401EE3D63F00A3F853 /* ProfileViewController.swift */; };
 		6B908179A5E151CF3DFB6F68 /* Pods_BuzzLabor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8799FF72500309A9748C1844 /* Pods_BuzzLabor.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		28B4C4381EE3965D00A3F853 /* SIgnInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIgnInView.swift; sourceTree = "<group>"; };
 		28B4C43A1EE3AA0800A3F853 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		28B4C43C1EE3AA4100A3F853 /* TapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizer.swift; sourceTree = "<group>"; };
+		28B4C43E1EE3CFDA00A3F853 /* LaborEnRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaborEnRouteViewController.swift; sourceTree = "<group>"; };
+		28B4C4401EE3D63F00A3F853 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		41772F24F93BF20F0606EAC6 /* Pods-BuzzLaborTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuzzLaborTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuzzLaborTests/Pods-BuzzLaborTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8799FF72500309A9748C1844 /* Pods_BuzzLabor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuzzLabor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE0778BDD7246A0ED98072E /* Pods-BuzzLabor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuzzLabor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuzzLabor/Pods-BuzzLabor.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				28B4C4301EE385C400A3F853 /* SignInViewController.swift */,
+				28B4C43E1EE3CFDA00A3F853 /* LaborEnRouteViewController.swift */,
+				28B4C4401EE3D63F00A3F853 /* ProfileViewController.swift */,
 				28B4C41E1EE37CF100A3F853 /* MainUserViewController.swift */,
 				28B4C42A1EE382E800A3F853 /* UserStylingViewController.swift */,
 			);
@@ -411,7 +417,9 @@
 				28B4C42B1EE382E800A3F853 /* UserStylingViewController.swift in Sources */,
 				28B4C4311EE385C400A3F853 /* SignInViewController.swift in Sources */,
 				28B4C42F1EE3854E00A3F853 /* WorkerHandler.swift in Sources */,
+				28B4C43F1EE3CFDA00A3F853 /* LaborEnRouteViewController.swift in Sources */,
 				28B4C4331EE386F900A3F853 /* AuthProvider.swift in Sources */,
+				28B4C4411EE3D63F00A3F853 /* ProfileViewController.swift in Sources */,
 				28B4C41F1EE37CF100A3F853 /* MainUserViewController.swift in Sources */,
 				28B4C4021EE37AF700A3F853 /* BuzzLabor.xcdatamodeld in Sources */,
 			);
