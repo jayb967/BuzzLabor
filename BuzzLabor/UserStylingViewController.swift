@@ -33,20 +33,20 @@ class UserStylingViewController: NSObject {
         /// 03
         // Warning: Image layers are not supported.
         /// Rectangle 2
-        let rectangle2 = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 253, height: 34), cornerRadius: 8)
-        context.saveGState()
-        context.translateBy(x: 81, y: 469)
-        UIColor(white: 0.847, alpha: 0.53).setFill()
-        rectangle2.fill()
-        context.saveGState()
-        rectangle2.lineWidth = 2
-        context.beginPath()
-        context.addPath(rectangle2.cgPath)
-        context.clip(using: .evenOdd)
-        UIColor(white: 0.592, alpha: 1).setStroke()
-        rectangle2.stroke()
-        context.restoreGState()
-        context.restoreGState()
+//        let rectangle2 = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 253, height: 34), cornerRadius: 8)
+//        context.saveGState()
+//        context.translateBy(x: 81, y: 469)
+//        UIColor(white: 0.847, alpha: 0.53).setFill()
+//        rectangle2.fill()
+//        context.saveGState()
+//        rectangle2.lineWidth = 2
+//        context.beginPath()
+//        context.addPath(rectangle2.cgPath)
+//        context.clip(using: .evenOdd)
+//        UIColor(white: 0.592, alpha: 1).setStroke()
+//        rectangle2.stroke()
+//        context.restoreGState()
+//        context.restoreGState()
         /// Username
         let username = NSMutableAttributedString(string: "Username")
         username.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 18)!, range: NSRange(location: 0, length: username.length))
@@ -1595,8 +1595,7 @@ class UserStylingViewController: NSObject {
         
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 414, height: 736), false, 0)
         UserStylingViewController.drawSigninsignUp2()
-        image = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
+        image = UIImage(named: "backgroundImage")!
         
         LocalCache.image = image
         return image

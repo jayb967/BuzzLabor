@@ -10,7 +10,7 @@ import UIKit
 
 class SignInVC: UIViewController {
     
-    private let RIDER_SEGUE = "RiderVC";
+    private let USER_SEGUE = "MainUserViewController";
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -37,7 +37,7 @@ class SignInVC: UIViewController {
                     self.emailTextField.text = "";
                     self.passwordTextField.text = "";
                     
-                    self.performSegue(withIdentifier: self.RIDER_SEGUE, sender: nil);
+                    self.performSegue(withIdentifier: self.USER_SEGUE, sender: nil);
                 }
                 
             });
@@ -62,7 +62,7 @@ class SignInVC: UIViewController {
                     self.emailTextField.text = "";
                     self.passwordTextField.text = "";
                     
-                    self.performSegue(withIdentifier: self.RIDER_SEGUE, sender: nil);
+                    self.performSegue(withIdentifier: self.USER_SEGUE, sender: nil);
                 }
                 
             });

@@ -14,13 +14,16 @@
 		28B4C4041EE37AF700A3F853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28B4C4031EE37AF700A3F853 /* Assets.xcassets */; };
 		28B4C4071EE37AF700A3F853 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B4C4051EE37AF700A3F853 /* LaunchScreen.storyboard */; };
 		28B4C4121EE37AF700A3F853 /* BuzzLaborTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C4111EE37AF700A3F853 /* BuzzLaborTests.swift */; };
-		28B4C41D1EE37BB400A3F853 /* GoogleService-Info (2).plist in Resources */ = {isa = PBXBuildFile; fileRef = 28B4C41C1EE37BB400A3F853 /* GoogleService-Info (2).plist */; };
+		28B4C41D1EE37BB400A3F853 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28B4C41C1EE37BB400A3F853 /* GoogleService-Info.plist */; };
 		28B4C41F1EE37CF100A3F853 /* MainUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C41E1EE37CF100A3F853 /* MainUserViewController.swift */; };
 		28B4C4251EE37DB100A3F853 /* DBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C4241EE37DB100A3F853 /* DBProvider.swift */; };
 		28B4C42B1EE382E800A3F853 /* UserStylingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C42A1EE382E800A3F853 /* UserStylingViewController.swift */; };
 		28B4C42D1EE3851200A3F853 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C42C1EE3851200A3F853 /* User.swift */; };
 		28B4C42F1EE3854E00A3F853 /* WorkerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C42E1EE3854E00A3F853 /* WorkerHandler.swift */; };
 		28B4C4311EE385C400A3F853 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C4301EE385C400A3F853 /* SignInViewController.swift */; };
+		28B4C4331EE386F900A3F853 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C4321EE386F900A3F853 /* AuthProvider.swift */; };
+		28B4C4371EE3887000A3F853 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C4361EE3887000A3F853 /* MyView.swift */; };
+		28B4C4391EE3965D00A3F853 /* SIgnInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C4381EE3965D00A3F853 /* SIgnInView.swift */; };
 		6B908179A5E151CF3DFB6F68 /* Pods_BuzzLabor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8799FF72500309A9748C1844 /* Pods_BuzzLabor.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,13 +50,16 @@
 		28B4C40D1EE37AF700A3F853 /* BuzzLaborTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuzzLaborTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B4C4111EE37AF700A3F853 /* BuzzLaborTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzLaborTests.swift; sourceTree = "<group>"; };
 		28B4C4131EE37AF700A3F853 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28B4C41C1EE37BB400A3F853 /* GoogleService-Info (2).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (2).plist"; sourceTree = "<group>"; };
+		28B4C41C1EE37BB400A3F853 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28B4C41E1EE37CF100A3F853 /* MainUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainUserViewController.swift; sourceTree = "<group>"; };
 		28B4C4241EE37DB100A3F853 /* DBProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBProvider.swift; sourceTree = "<group>"; };
 		28B4C42A1EE382E800A3F853 /* UserStylingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStylingViewController.swift; sourceTree = "<group>"; };
 		28B4C42C1EE3851200A3F853 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28B4C42E1EE3854E00A3F853 /* WorkerHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerHandler.swift; sourceTree = "<group>"; };
 		28B4C4301EE385C400A3F853 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		28B4C4321EE386F900A3F853 /* AuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		28B4C4361EE3887000A3F853 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		28B4C4381EE3965D00A3F853 /* SIgnInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIgnInView.swift; sourceTree = "<group>"; };
 		41772F24F93BF20F0606EAC6 /* Pods-BuzzLaborTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuzzLaborTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuzzLaborTests/Pods-BuzzLaborTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8799FF72500309A9748C1844 /* Pods_BuzzLabor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuzzLabor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE0778BDD7246A0ED98072E /* Pods-BuzzLabor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuzzLabor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuzzLabor/Pods-BuzzLabor.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				28B4C4241EE37DB100A3F853 /* DBProvider.swift */,
+				28B4C4321EE386F900A3F853 /* AuthProvider.swift */,
 				28B4C42C1EE3851200A3F853 /* User.swift */,
 				28B4C42E1EE3854E00A3F853 /* WorkerHandler.swift */,
 				28B4C3F91EE37AF700A3F853 /* AppDelegate.swift */,
@@ -144,6 +151,8 @@
 		28B4C4221EE37D7800A3F853 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				28B4C4361EE3887000A3F853 /* MyView.swift */,
+				28B4C4381EE3965D00A3F853 /* SIgnInView.swift */,
 				28B4C3FD1EE37AF700A3F853 /* Main.storyboard */,
 				28B4C4031EE37AF700A3F853 /* Assets.xcassets */,
 				28B4C4051EE37AF700A3F853 /* LaunchScreen.storyboard */,
@@ -154,7 +163,7 @@
 		28B4C4231EE37D7F00A3F853 /* Supporting  */ = {
 			isa = PBXGroup;
 			children = (
-				28B4C41C1EE37BB400A3F853 /* GoogleService-Info (2).plist */,
+				28B4C41C1EE37BB400A3F853 /* GoogleService-Info.plist */,
 				28B4C4081EE37AF700A3F853 /* Info.plist */,
 				28B4C4001EE37AF700A3F853 /* BuzzLabor.xcdatamodeld */,
 			);
@@ -272,7 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28B4C41D1EE37BB400A3F853 /* GoogleService-Info (2).plist in Resources */,
+				28B4C41D1EE37BB400A3F853 /* GoogleService-Info.plist in Resources */,
 				28B4C4071EE37AF700A3F853 /* LaunchScreen.storyboard in Resources */,
 				28B4C4041EE37AF700A3F853 /* Assets.xcassets in Resources */,
 				28B4C3FF1EE37AF700A3F853 /* Main.storyboard in Resources */,
@@ -388,10 +397,13 @@
 			files = (
 				28B4C4251EE37DB100A3F853 /* DBProvider.swift in Sources */,
 				28B4C3FA1EE37AF700A3F853 /* AppDelegate.swift in Sources */,
+				28B4C4391EE3965D00A3F853 /* SIgnInView.swift in Sources */,
+				28B4C4371EE3887000A3F853 /* MyView.swift in Sources */,
 				28B4C42D1EE3851200A3F853 /* User.swift in Sources */,
 				28B4C42B1EE382E800A3F853 /* UserStylingViewController.swift in Sources */,
 				28B4C4311EE385C400A3F853 /* SignInViewController.swift in Sources */,
 				28B4C42F1EE3854E00A3F853 /* WorkerHandler.swift in Sources */,
+				28B4C4331EE386F900A3F853 /* AuthProvider.swift in Sources */,
 				28B4C41F1EE37CF100A3F853 /* MainUserViewController.swift in Sources */,
 				28B4C4021EE37AF700A3F853 /* BuzzLabor.xcdatamodeld in Sources */,
 			);

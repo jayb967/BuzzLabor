@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UberController {
+class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UberController {
     
     @IBOutlet weak var myMap: MKMapView!
     
@@ -108,7 +108,7 @@ class RiderVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
             if canCallUber {
                 UberHandler.Instance.requestUber(latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
                 
-                timer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self, selector: #selector(RiderVC.updateRidersLocation), userInfo: nil, repeats: true);
+                timer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self, selector: #selector(MainUserViewController.updateRidersLocation), userInfo: nil, repeats: true);
                 
             } else {
                 riderCanceledRequest = true;
