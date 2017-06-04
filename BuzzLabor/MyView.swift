@@ -15,7 +15,7 @@ class MyView: UIView {
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-         UserStylingViewController.drawUserMain(frame: self.bounds, resizing: .aspectFill)
+         UserStylingViewController.drawLaborProfile()
     }
     
 

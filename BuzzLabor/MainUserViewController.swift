@@ -28,16 +28,16 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.myMap.showsBuildings = true
         view.disableKeybordWhenTapped = true
         initializeLocationManager();
         LaborHandler.Instance.observeMessagesForUser();
         LaborHandler.Instance.delegate = self;
+        self.myMap.showsUserLocation = true
     }
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
         
-//        self.myMap.showsUserLocation = true
+//        self.myMap.showsBuildings = true
     }
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if (segue.identifier == "LaborConfirmed") {
@@ -76,6 +76,9 @@ class MainUserViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     @IBAction func cancelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         // if we have the coordinates from the manager

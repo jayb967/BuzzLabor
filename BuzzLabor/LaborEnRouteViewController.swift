@@ -21,56 +21,60 @@ class LaborEnRouteViewController: UIViewController {
     private var canCallLabor = true;
     private var LaborerCancelledRequest = false;
     
-    private var appStartedForTheFirstTime = true;
+//    private var appStartedForTheFirstTime = true;
 
 
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mapView.showsBuildings = true
+//        self.mapView.showsBuildings = true
         view.disableKeybordWhenTapped = true
+        self.mapView.showsUserLocation = true
+        callLaborer()
         initializeLocationManager();
         LaborHandler.Instance.observeMessagesForUser();
-        LaborHandler.Instance.delegate = self as! LaborController;
+        LaborHandler.Instance.delegate = self as? LaborController;
         
     }
 
     @IBAction func contactButtonPressed(_ sender: Any) {
-        let secondViewController:ProfileViewController = ProfileViewController()
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
-        self.present(secondViewController, animated: true, completion: nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileView") as! ProfileViewController
+        self.present(nextViewController, animated:true, completion:nil)
+        
+    }
+    @IBAction func cancelLaborButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        canCallLabor = false
         
     }
     
+    
     private func initializeLocationManager() {
-        locationManager.delegate = self as! CLLocationManagerDelegate;
+        locationManager.delegate = self as? CLLocationManagerDelegate;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.requestWhenInUseAuthorization();
         locationManager.startUpdatingLocation();
     }
     
-    @IBAction func callLaborerButton(_ sender: Any) {
-        
-        self.dismiss(animated: true) {
-            if self.userLocation != nil {
-                if self.canCallLabor {
-                    LaborHandler.Instance.requestLabor(latitude: Double(self.userLocation!.latitude), longitude: Double(self.userLocation!.longitude))
-                    
-                    self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self, selector: #selector(MainUserViewController.updateUsersLocation), userInfo: nil, repeats: true);
-                    
-                } else {
-                    self.LaborerCancelledRequest = true;
-                    LaborHandler.Instance.cancelUber();
-                    self.timer.invalidate();
-                }
+    func callLaborer(){
+        if self.userLocation != nil {
+            if self.canCallLabor {
+                LaborHandler.Instance.requestLabor(latitude: Double(self.userLocation!.latitude), longitude: Double(self.userLocation!.longitude))
+                
+                self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self, selector: #selector(MainUserViewController.updateUsersLocation), userInfo: nil, repeats: true);
+                
+            } else {
+                self.LaborerCancelledRequest = true;
+                LaborHandler.Instance.cancelUber();
+                self.timer.invalidate();
             }
         }
     }
     
-    @IBAction func cancelButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         // if we have the coordinates from the manager

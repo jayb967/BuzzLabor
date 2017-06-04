@@ -755,7 +755,7 @@ class UserStylingViewController: NSObject {
                 
                 /// Cement Block Move
                 let cementBlockMove = NSMutableAttributedString(string: "Cement Block Move")
-                cementBlockMove.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFNSText", size: 11)!, range: NSRange(location: 0, length: cementBlockMove.length))
+                cementBlockMove.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 11)!, range: NSRange(location: 0, length: cementBlockMove.length))
                 cementBlockMove.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.685, saturation: 0.148, brightness: 0.239, alpha: 1), range: NSRange(location: 0, length: cementBlockMove.length))
                 cementBlockMove.addAttribute(NSKernAttributeName, value: -0.1, range: NSRange(location: 0, length: cementBlockMove.length))
                 do {
@@ -857,7 +857,7 @@ class UserStylingViewController: NSObject {
                 
                 /// Bin Sorting
                 let binSorting = NSMutableAttributedString(string: "Bin Sorting")
-                binSorting.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFNSText", size: 12)!, range: NSRange(location: 0, length: binSorting.length))
+                binSorting.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 12)!, range: NSRange(location: 0, length: binSorting.length))
                 binSorting.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.685, saturation: 0.148, brightness: 0.239, alpha: 1), range: NSRange(location: 0, length: binSorting.length))
                 binSorting.addAttribute(NSKernAttributeName, value: -0.1, range: NSRange(location: 0, length: binSorting.length))
                 do {
@@ -1008,7 +1008,7 @@ class UserStylingViewController: NSObject {
         context.restoreGState()
         /// Reviews
         let reviews = NSMutableAttributedString(string: "Reviews")
-        reviews.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFNSText-Bold", size: 20)!, range: NSRange(location: 0, length: reviews.length))
+        reviews.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue-Bold", size: 20)!, range: NSRange(location: 0, length: reviews.length))
         reviews.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.492, saturation: 0.735, brightness: 0.314, alpha: 1), range: NSRange(location: 0, length: reviews.length))
         reviews.addAttribute(NSKernAttributeName, value: -0.1, range: NSRange(location: 0, length: reviews.length))
         context.saveGState()
@@ -1024,7 +1024,7 @@ class UserStylingViewController: NSObject {
         // Warning: New symbols are not supported.
         /// Rating Chart
         let ratingChart = NSMutableAttributedString(string: "Rating Chart")
-        ratingChart.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFNSDisplay", size: 13)!, range: NSRange(location: 0, length: ratingChart.length))
+        ratingChart.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 13)!, range: NSRange(location: 0, length: ratingChart.length))
         ratingChart.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.685, saturation: 0.148, brightness: 0.239, alpha: 1), range: NSRange(location: 0, length: ratingChart.length))
         context.saveGState()
         ratingChart.draw(at: CGPoint(x: 143, y: 225))
@@ -1041,7 +1041,7 @@ class UserStylingViewController: NSObject {
                 
                 /// 12
                 let _12 = NSMutableAttributedString(string: "12")
-                _12.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFNSDisplay", size: 36)!, range: NSRange(location: 0, length: _12.length))
+                _12.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 36)!, range: NSRange(location: 0, length: _12.length))
                 _12.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.685, saturation: 0.148, brightness: 0.239, alpha: 1), range: NSRange(location: 0, length: _12.length))
                 do {
                     let paragraphStyle = NSMutableParagraphStyle()
@@ -1055,7 +1055,7 @@ class UserStylingViewController: NSObject {
                 
                 /// Jobs
                 let jobs = NSMutableAttributedString(string: "Jobs")
-                jobs.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFNSText", size: 11)!, range: NSRange(location: 0, length: jobs.length))
+                jobs.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 11)!, range: NSRange(location: 0, length: jobs.length))
                 jobs.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.685, saturation: 0.094, brightness: 0.661, alpha: 1), range: NSRange(location: 0, length: jobs.length))
                 jobs.addAttribute(NSKernAttributeName, value: 0.6, range: NSRange(location: 0, length: jobs.length))
                 do {
@@ -1475,7 +1475,7 @@ class UserStylingViewController: NSObject {
             
             /// Buzz Labor
             let buzzLabor = NSMutableAttributedString(string: "Buzz Labor\n\n")
-            buzzLabor.addAttribute(NSFontAttributeName, value: UIFont(name: ".SFNSText", size: 16)!, range: NSRange(location: 0, length: buzzLabor.length))
+            buzzLabor.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue", size: 16)!, range: NSRange(location: 0, length: buzzLabor.length))
             buzzLabor.addAttribute(NSForegroundColorAttributeName, value: UIColor(hue: 0.685, saturation: 0.148, brightness: 0.239, alpha: 1), range: NSRange(location: 0, length: buzzLabor.length))
             do {
                 let paragraphStyle = NSMutableParagraphStyle()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02C5359368C9FB6BB3ED2A72 /* Pods_BuzzLaborTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3EFCA9FB40CAE66FD659FD /* Pods_BuzzLaborTests.framework */; };
+		281B8DBF1EE4723800D09703 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B8DBE1EE4723800D09703 /* ConfirmationViewController.swift */; };
 		28B4C3FA1EE37AF700A3F853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C3F91EE37AF700A3F853 /* AppDelegate.swift */; };
 		28B4C3FF1EE37AF700A3F853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B4C3FD1EE37AF700A3F853 /* Main.storyboard */; };
 		28B4C4021EE37AF700A3F853 /* BuzzLabor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28B4C4001EE37AF700A3F853 /* BuzzLabor.xcdatamodeld */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		1191137289F945FDCA28D542 /* Pods-BuzzLaborTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuzzLaborTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuzzLaborTests/Pods-BuzzLaborTests.release.xcconfig"; sourceTree = "<group>"; };
 		1D3EFCA9FB40CAE66FD659FD /* Pods_BuzzLaborTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuzzLaborTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		281B8DBE1EE4723800D09703 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		28B4C3F61EE37AF700A3F853 /* BuzzLabor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuzzLabor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B4C3F91EE37AF700A3F853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28B4C3FE1EE37AF700A3F853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				28B4C43E1EE3CFDA00A3F853 /* LaborEnRouteViewController.swift */,
 				28B4C4401EE3D63F00A3F853 /* ProfileViewController.swift */,
 				28B4C41E1EE37CF100A3F853 /* MainUserViewController.swift */,
+				281B8DBE1EE4723800D09703 /* ConfirmationViewController.swift */,
 				28B4C42A1EE382E800A3F853 /* UserStylingViewController.swift */,
 			);
 			name = Controller;
@@ -413,6 +416,7 @@
 				28B4C4391EE3965D00A3F853 /* SIgnInView.swift in Sources */,
 				28B4C43B1EE3AA0800A3F853 /* UIExtensions.swift in Sources */,
 				28B4C4371EE3887000A3F853 /* MyView.swift in Sources */,
+				281B8DBF1EE4723800D09703 /* ConfirmationViewController.swift in Sources */,
 				28B4C42D1EE3851200A3F853 /* User.swift in Sources */,
 				28B4C42B1EE382E800A3F853 /* UserStylingViewController.swift in Sources */,
 				28B4C4311EE385C400A3F853 /* SignInViewController.swift in Sources */,
