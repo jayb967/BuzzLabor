@@ -21,19 +21,19 @@ class DBProvider {
     }
     
     var ridersRef: DatabaseReference {
-        return dbRef.child(Constants.RIDERS);
+        return dbRef.child(Constants.USERS);
     }
     
     var requestRef: DatabaseReference {
-        return dbRef.child(Constants.UBER_REQUEST);
+        return dbRef.child(Constants.LABOR_REQUESTED);
     }
     
     var requestAcceptedRef: DatabaseReference {
-        return dbRef.child(Constants.UBER_ACCEPTED);
+        return dbRef.child(Constants.LABOR_ACCEPTED);
     }
     
     func saveUser(withID: String, email: String, password: String) {
-        let data: Dictionary<String, Any> = [Constants.EMAIL: email, Constants.PASSWORD: password, Constants.isRider: true];
+        let data: Dictionary<String, Any> = [Constants.EMAIL: email, Constants.PASSWORD: password, Constants.isUser: true];
         ridersRef.child(withID).child(Constants.DATA).setValue(data);
     }
     

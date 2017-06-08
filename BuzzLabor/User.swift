@@ -11,13 +11,13 @@ import Foundation
 class Constants {
     
     // DBProvider
-    static let RIDERS = "riders"
+    static let USERS = "users"
     static let EMAIL = "email"
     static let PASSWORD = "password"
     static let DATA = "data"
-    static let isRider = "isRider"
-    static let UBER_REQUEST = "Uber_Request"
-    static let UBER_ACCEPTED = "Uber_Accepted"
+    static let isUser = "isUser"
+    static let LABOR_REQUESTED = "Labor_Requested"
+    static let LABOR_ACCEPTED = "Labor_Accepted"
     
     // Uber Handler
     static let NAME = "name"

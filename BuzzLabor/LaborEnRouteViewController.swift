@@ -31,10 +31,10 @@ class LaborEnRouteViewController: UIViewController {
 //        self.mapView.showsBuildings = true
         view.disableKeybordWhenTapped = true
         self.mapView.showsUserLocation = true
-        callLaborer()
         initializeLocationManager();
         LaborHandler.Instance.observeMessagesForUser();
         LaborHandler.Instance.delegate = self as? LaborController;
+        callLaborer()
         
     }
 
@@ -96,7 +96,10 @@ class LaborEnRouteViewController: UIViewController {
                     mapView.addAnnotation(laborerAnnotation);
                 }
             }
-            
+            let annotation = MKPointAnnotation();
+                        annotation.coordinate = userLocation!;
+                        annotation.title = "Laborer Location";
+                        mapView.addAnnotation(annotation);
         }
         
     }
