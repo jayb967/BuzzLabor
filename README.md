@@ -4,4 +4,8 @@ Application was made for the convinience of gettin general labor on demand. Appl
 
 ### Worker side UI app built seperately (private for my own good)
 
-https://appetize.io/embed/ab2uueh345wztppk85e5fwqjyw?device=iphone7&scale=75&orientation=portrait&osVersion=10.0
+
+[![Click here if Gif not working.](https://fat.gfycat.com/TidyUltimateKronosaurus.webm)](https://fat.gfycat.com/TidyUltimateKronosaurus.webm)
+
+
+![](https://appetize.io/embed/ab2uueh345wztppk85e5fwqjyw?device=iphone7&scale=75&orientation=portrait&osVersion=10.0)
